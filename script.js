@@ -37,4 +37,4 @@ let numberA = 4;
 let numberB = 2;
 let operator = '+';
 
-alert(operate(numberA, operator, numberB));
+//alert(operate(numberA, operator, numberB));

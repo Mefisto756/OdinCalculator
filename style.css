@@ -1,30 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
+body, button {
+    font-family: "Orbitron", sans-serif;
+    font-size: large;
+}
+
+button 
+{
+    flex: 1;
+    border-radius: 3px;
+    border-color: #1F2937;
+}
+
+#numbers button {
+    min-width: 30%;
+    height: 20%;
+} 
+
+.functionsKey {
+    background-color: #f2ae31;
+}
+
+.functionsKey:hover {
+    background-color: #c7860c;
+}
+
+.functionsKey:active {
+    background-color: #bb7e0c;
+}
+
+.numbersKey {
+    background-color: #fafbf9;
+}
+
+.numbersKey:hover {
+    background-color: #dedede;
+}
+
+.numbersKey:active {
+    background-color: #cbcbcb;
+}
+
+.specialKey {
+    background-color: #38b0f6;
+}
+
+.specialKey:hover {
+    background-color: #0a94e4;
+}
+
+.specialKey:active {
+    background-color: #097cbf;
+}
 #calculator {
-    width: 400px;
-    height: 600px;
-    background-color: pink;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1F2937;
+    width: 350px;
+    height: 500px;
     border-radius: 5px;
+    padding: 10px;
 }
 
 #display {
-    width: 400px;
-    height: 200px;
-    background-color: grey;
+    background-color: #F9FAF8;
+    flex: 1;
+    max-height: 150px;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
 #keypad {
+    flex: 1;
+    display: flex;
+}
+
+#numbers {
+    width: 250px;
+    background-color: #2f486b;
     display: flex;
     flex-wrap: wrap;
-    height: 380px;
-    width: 380px;
-    background-color: blue;
-    flex: 1;
-    gap: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
-button {
-    width: 90px;
+#operations {
+    width: 100px;   
+    display: flex;
+    flex-direction: column;
 }
