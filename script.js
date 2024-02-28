@@ -11,30 +11,57 @@ function getMultiply(a, b) {
 }
 
 function getDivision(a, b) {
-    return (b === 0) ? 0: a/b;
+    return (b === 0) ? 0 : a / b;
 }
 
-function operate(a, operator, b) {
+function getSquare(a) {
+    return a ** 2;
+}
+
+function getRoot(a) {
+    return Math.sqrt(a).toFixed(2);
+}
+
+function getMod(a, b) {
+    return a % b;
+}
+
+function operate(a, operator, b = 0) {
     let result = 0;
+    a = Number(a);
+    b = Number(b);
+
     switch (operator) {
         case '+':
-            result = getSum(a,b);
+            result = getSum(a, b);
             break;
         case '-':
-            result = getSubstract(a,b);
+            result = getSubstract(a, b);
             break;
         case '*':
-            result = getMultiply(a,b);
+            result = getMultiply(a, b);
             break;
         case '/':
-            result = getDivision(a,b);
+            result = getDivision(a, b);
+            break;
+        case '√':
+            result = getRoot(a);
+            break;
+        case 'x²':
+            result = getSquare(a);
+            break;
+        case '%':
+            result = getMod(a, b);
             break;
     }
     return result;
 }
 
-let numberA = 4;
-let numberB = 2;
-let operator = '+';
+function main() { //event listeners and global variables
+    let numberA = '3';
+    let numberB = '2';
+    let operator = '%';
+    alert(operate(numberA, operator, numberB));
 
-//alert(operate(numberA, operator, numberB));
+}
+main();
