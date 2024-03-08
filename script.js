@@ -1,5 +1,6 @@
 let input = '';
 let operatorFlag = 0;
+let resultFlag = 0;
 
 function getDivision(a, b) {
     return (b === 0) ? 0 : a / b;
@@ -48,8 +49,9 @@ function evaluateKeystroke(n) {// after result number replace result
     singleNumberOperationKeys = ['x²', '√'];
 
     if (numberKeys.includes(n)) {
-        if (input == '0' || input == '0.00') {
+        if (input == '0' || input == '0.00' || resultFlag == 1) {
             input = n;
+            resultFlag = 0;
         }
         else
             input += n;
@@ -62,6 +64,7 @@ function evaluateKeystroke(n) {// after result number replace result
             } else {
                 input += ` ${n} `;
                 operatorFlag = 1;
+                resultFlag = 0;
             }
         } else { // x^2 etc
             if (singleNumberOperationKeys.includes(n)) { // x^2
@@ -69,6 +72,7 @@ function evaluateKeystroke(n) {// after result number replace result
                     splitedInput = input.split(' ');
                     input = operate(Number(splitedInput[0]), splitedInput[1], Number(splitedInput[2]));
                     operatorFlag = 0;
+                    resultFlag = 1;
                 }
                 input = operate(Number(input), n);
                 operatorFlag = 0;
@@ -80,6 +84,7 @@ function evaluateKeystroke(n) {// after result number replace result
                         splitedInput = input.split(' ');
                         input = operate(Number(splitedInput[0]), splitedInput[1], Number(splitedInput[2]));
                         operatorFlag = 0;
+                        resultFlag = 1;
                     }
             }
         }
