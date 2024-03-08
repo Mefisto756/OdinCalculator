@@ -42,7 +42,7 @@ function display() {
     displayHtml.textContent = input;
 }
 
-function evaluateKeystroke(n) {// after result number replace result
+function evaluateKeystroke(n) {// input validation for number 
 
     twoNumberOperationKeys = ['*', '/', '-', '+', 'mod'];
     numberKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
@@ -89,8 +89,11 @@ function evaluateKeystroke(n) {// after result number replace result
             }
         }
     }
-
-    display(input)
+    if(input == 'NaN') {
+        input = `Wrong input`;
+        resultFlag = 1;
+    }
+    display()
 }
 
 function main() { //event listeners
